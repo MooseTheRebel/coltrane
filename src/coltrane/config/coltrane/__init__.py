@@ -152,7 +152,7 @@ class Config(Base):
     def update_from_env(self):
         """Override coltrane.coltrane config with environment variables"""
 
-        type_hints = get_type_hints(self.coltrane)
+        type_hints = get_type_hints(type(self.coltrane))
 
         for key in environ.keys():
             if key.startswith("COLTRANE_"):
